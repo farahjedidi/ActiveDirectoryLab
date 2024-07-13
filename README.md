@@ -11,7 +11,7 @@ In this project, I set up a fully functional Active Directory environment using 
 Steps to Set Up the Lab
 
 ## Lab Environment Architecture
-
+![Architecture Diagram](https://imgur.com/a/AeJxM9U)
 ## Step 1: Set Up the Domain Controller
 
 ## Step 2: Configure Active Directory Domain Services
