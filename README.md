@@ -17,7 +17,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
 ### Network Configuration
 
 - **Domain Controller (Server 2019)**
-  - NIC 1: Internet (DHCP, gets address from home router)
+  - NIC 1: Internet (DHCP, gets address automatically from home router)
   - NIC 2: Internal Network (Static IP: 172.16.0.1, Mask: 255.255.255.0, DNS: 127.0.0.1)
 
 - **Client Machine (Windows 10)**
