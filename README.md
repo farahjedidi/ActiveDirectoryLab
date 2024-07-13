@@ -28,31 +28,41 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
 1. **Configure NIC Settings**
    - **Purpose**: Setting a static IP for the internal NIC ensures that the domain controller has a fixed address within the internal network, which is necessary for reliable communication and services.
    - **Steps**: 
-     - Access the network settings and configure NIC 2 (Internal) to use the static IP: 172.16.0.1.
-     - ![Screenshot](https://i.imgur.com/imILsSe.png)
+     - I accessed the network settings and configured NIC 2 (Internal) to use the static IP: 172.16.0.1 & subnet mask 255.255.255.0
+      ![Screenshot](https://i.imgur.com/imILsSe.png)
+     - I did not set a default gateway for the internal NIC as the domain controller serves as its own gateway.
+     - For DNS, I configured it to use the loopback address (127.0.0.1), which refers to the server itself.
 
 2. **Install Active Directory Domain Services (AD DS) Role**
    - **Purpose**: AD DS is a server role in Windows Server that allows you to create a scalable, secure, and manageable infrastructure for user and resource management.
    - **Steps**: 
-     - Open Server Manager, add roles and features.
-     - Select Active Directory Domain Services.
-     - Proceed with the installation and initial configuration.
-     - ![Screenshot]()
+     - I opened Server Manager, added roles and features & selected the server.
+       ![Screenshot](https://i.imgur.com/ZZlr6y5.png)
+       ![Screenshot](https://i.imgur.com/jGgs1Fz.png)
+     - Selected Active Directory Domain Services.
+       ![Screenshot](https://i.imgur.com/RxdwfJL.png)
+     - Proceeded with the installation and initial configuration.
+      ![Screenshot](https://i.imgur.com/bG3rKs5.png)
 
 3. **Promote Server to Domain Controller**
    - **Purpose**: Promoting the server to a domain controller is essential to manage and provide authentication services in the domain.
    - **Steps**: 
-     - After installing AD DS, follow the steps to promote the server to a domain controller.
-     - Create a new forest with the Fully Qualified Domain Name (FQDN): `mydomain.com`.
-     - Configure necessary DNS settings and additional options as per the wizard.
-     - Complete the wizard and restart the server to apply changes.
-     - ![Screenshot]()
-
-4. **Configure DHCP**
+     - After installing AD DS, I promoted the server to a domain controller.
+       ![Screenshot](https://i.imgur.com/yPQz7Az.png)
+     - Created a new forest with the Fully Qualified Domain Name (FQDN): `mydomain.com`.
+        ![Screenshot](https://i.imgur.com/QxNpX51.png)
+     - Completed the wizard and restarted the server to apply changes.
+       
+4. **Create a new dedicated domain admin account**
+   - **Purpose**: By creating a new dedicated domain admin account, we follow the best practices, ensuring a more secure, manageable, and compliant Active Directory environment.
+   - **Steps**:
+  
+   
+5. **Configure DHCP**
    - **Purpose**: DHCP (Dynamic Host Configuration Protocol) allows the domain controller to assign IP addresses to devices within the internal network dynamically.
    - **Steps**: 
-     - Add the DHCP role via Server Manager.
-     - Configure a DHCP scope for the internal network (IP range: 172.16.0.100-200).
+     - I added the DHCP role via Server Manager.
+     - Configured a DHCP scope for the internal network (IP range: 172.16.0.100-200).
      - Set the gateway to 172.16.0.1 and DNS to 172.16.0.1 to ensure proper network configuration for clients.
      - ![Screenshot]()
 
