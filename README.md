@@ -29,7 +29,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
    - **Purpose**: Setting a static IP for the internal NIC ensures that the domain controller has a fixed address within the internal network, which is necessary for reliable communication and services.
    - **Steps**: 
      - Access the network settings and configure NIC 2 (Internal) to use the static IP: 172.16.0.1.
-     - ![Screenshot](path/to/screenshot1.png)
+     - ![Screenshot]()
 
 2. **Install Active Directory Domain Services (AD DS) Role**
    - **Purpose**: AD DS is a server role in Windows Server that allows you to create a scalable, secure, and manageable infrastructure for user and resource management.
@@ -37,7 +37,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - Open Server Manager, add roles and features.
      - Select Active Directory Domain Services.
      - Proceed with the installation and initial configuration.
-     - ![Screenshot](path/to/screenshot2.png)
+     - ![Screenshot]()
 
 3. **Promote Server to Domain Controller**
    - **Purpose**: Promoting the server to a domain controller is essential to manage and provide authentication services in the domain.
@@ -46,7 +46,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - Create a new forest with the Fully Qualified Domain Name (FQDN): `mydomain.com`.
      - Configure necessary DNS settings and additional options as per the wizard.
      - Complete the wizard and restart the server to apply changes.
-     - ![Screenshot](path/to/screenshot3.png)
+     - ![Screenshot]()
 
 4. **Configure DHCP**
    - **Purpose**: DHCP (Dynamic Host Configuration Protocol) allows the domain controller to assign IP addresses to devices within the internal network dynamically.
@@ -54,7 +54,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - Add the DHCP role via Server Manager.
      - Configure a DHCP scope for the internal network (IP range: 172.16.0.100-200).
      - Set the gateway to 172.16.0.1 and DNS to 172.16.0.1 to ensure proper network configuration for clients.
-     - ![Screenshot](path/to/screenshot4.png)
+     - ![Screenshot]()
 
 ### Client Machine Setup
 
@@ -63,7 +63,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
    - **Steps**: 
      - Set the NIC to use the internal network.
      - Ensure it is set to obtain an IP address automatically from the DHCP server (DC).
-     - ![Screenshot](path/to/screenshot5.png)
+     - ![Screenshot]()
 
 2. **Join Client to Domain**
    - **Purpose**: Joining the client machine to the domain allows it to be managed centrally by the domain controller and to utilize domain resources.
@@ -71,7 +71,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - Open System Properties, change settings to join the domain `mydomain.com`.
      - Provide domain admin credentials when prompted.
      - Restart the client machine to apply changes.
-     - ![Screenshot](path/to/screenshot6.png)
+     - ![Screenshot]()
 
 ### Creating Users with PowerShell
 
@@ -83,7 +83,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      
      ```
      - This script creates an Organizational Unit named "LabUsers" and 1000 user accounts within that OU.
-     - ![Screenshot](path/to/screenshot7.png)
+     - ![Screenshot]()
 
 ## Conclusion
 
