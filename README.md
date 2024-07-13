@@ -6,9 +6,6 @@
 
 In this project, I set up an Active Directory lab environment using VirtualBox. The lab consists of a domain controller (Server 2019) and a client machine (Windows 10). The main goal is to configure and manage an AD DS environment.
 
-
-
-
 ## Setup Steps
 
 ### Requirements
@@ -83,21 +80,13 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
    - **Steps**: 
      - Use the following PowerShell script to create an OU and multiple users:
      ```powershell
-     # Create an OU
-     New-ADOrganizationalUnit -Name "LabUsers" -Path "DC=mydomain,DC=com"
-
-     # Create users
-     for ($i=1; $i -le 1000; $i++) {
-       $Username = "User$i"
-       $Password = ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force
-       New-ADUser -Name $Username -AccountPassword $Password -PasswordNeverExpires $true -Enabled $true -Path "OU=LabUsers,DC=mydomain,DC=com"
-     }
+     
      ```
      - This script creates an Organizational Unit named "LabUsers" and 1000 user accounts within that OU.
      - ![Screenshot](path/to/screenshot7.png)
 
 ## Conclusion
 
-This lab demonstrates configuring AD DS, setting up DHCP, and automating user creation with PowerShell.
+This setup creates a secure, isolated internal network where the DC provides domain services and DHCP addresses to the client. The RAS/NAT configuration allows the internal network to communicate with the external internet while maintaining network security. This architecture is ideal for practicing domain management and network administration in a controlled lab environment.
 
 
