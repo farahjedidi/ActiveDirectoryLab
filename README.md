@@ -1,4 +1,4 @@
-# Active Directory Lab
+![image](https://github.com/user-attachments/assets/caf0dd58-83ab-4c76-8ddb-c0ea73f939d0)# Active Directory Lab
 
 
 ![Lab Architecture](https://i.imgur.com/dUrbQrj.png)
@@ -68,14 +68,31 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      -   ![Screenshot](https://i.imgur.com/HKs437q.png)
      - I logged out and then logged back in using the new domain admin account (a-fjedidi).
   
-   
-5. **Configure DHCP**
+5. ****Install & configure RAS/NAT Role****
+   - **Purpose**: RAS/NAT (Routing and Remote Access / Network Address Translation) allows client machines on a private virtual network to access the internet by routing their traffic through the domain controller. This ensures that the internal network can communicate with external networks while maintaining a private IP addressing scheme.
+   - **Steps**: 
+     - I accessed Add Roles and Features from Server Manager and selected Remote Access as the role to install & Routing as the role service and proceeded with the installation.
+     - ![Screenshot](https://i.imgur.com/04jmZyS.png)
+     - Once the role installation was complete, I opened Routing and Remote Access from the Tools menu then selected NAT to allow internal clients to connect to the internet using one address.
+     - ![Screenshot](https://i.imgur.com/yTQaJff.png)
+     - I ensured the public interface (named "INTERNET") was selected for connecting to the internet.
+     - ![Screenshot](https://i.imgur.com/a4XzyBi.png)
+     - After configuration, I verified the RAS/NAT setup was successful by checking the green status indicator.
+     - ![Screenshot](https://i.imgur.com/pLsUU71.png)
+
+          
+6. **Install & configure DHCP Role**
    - **Purpose**: DHCP (Dynamic Host Configuration Protocol) allows the domain controller to assign IP addresses to devices within the internal network dynamically.
    - **Steps**: 
-     - I added the DHCP role via Server Manager.
+     - I installed the DHCP role via Server Manager.
+     - ![Screenshot](https://i.imgur.com/fCAGeij.png)
      - Configured a DHCP scope for the internal network (IP range: 172.16.0.100-200).
+     - ![Screenshot](https://i.imgur.com/daKGka8.png)
      - Set the gateway to 172.16.0.1 and DNS to 172.16.0.1 to ensure proper network configuration for clients.
-     - ![Screenshot]()
+     - ![Screenshot](https://i.imgur.com/xRuAYdF.png)
+     - ![Screenshot](https://i.imgur.com/A5ghx0s.png)
+     - DHCP successfully configured.
+     - ![Screenshot](https://i.imgur.com/fvD7Wup.png)
 
 ### Client Machine Setup
 
