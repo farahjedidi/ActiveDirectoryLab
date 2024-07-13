@@ -75,7 +75,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - ![Screenshot](https://i.imgur.com/04jmZyS.png)
      - Once the role installation was complete, I opened Routing and Remote Access from the Tools menu then selected NAT to allow internal clients to connect to the internet using one address.
      - ![Screenshot](https://i.imgur.com/yTQaJff.png)
-     - I ensured the public interface (named "_INTERNET_") was selected for connecting to the internet.
+     - I ensured the public interface was selected for connecting to the internet.
      - ![Screenshot](https://i.imgur.com/a4XzyBi.png)
      - After configuration, I verified the RAS/NAT setup was successful by checking the green status indicator.
      - ![Screenshot](https://i.imgur.com/pLsUU71.png)
