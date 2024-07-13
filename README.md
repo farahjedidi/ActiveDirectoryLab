@@ -39,8 +39,10 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - I opened Server Manager, added roles and features & selected the server.
        ![Screenshot](https://i.imgur.com/ZZlr6y5.png)
        ![Screenshot](https://i.imgur.com/jGgs1Fz.png)
+       
      - Selected Active Directory Domain Services.
        ![Screenshot](https://i.imgur.com/RxdwfJL.png)
+       
      - Proceeded with the installation and initial configuration.
       ![Screenshot](https://i.imgur.com/bG3rKs5.png)
 
@@ -49,13 +51,22 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
    - **Steps**: 
      - After installing AD DS, I promoted the server to a domain controller.
        ![Screenshot](https://i.imgur.com/yPQz7Az.png)
+       
      - Created a new forest with the Fully Qualified Domain Name (FQDN): `mydomain.com`.
         ![Screenshot](https://i.imgur.com/QxNpX51.png)
+       
      - Completed the wizard and restarted the server to apply changes.
        
 4. **Create a new dedicated domain admin account**
    - **Purpose**: By creating a new dedicated domain admin account, we follow the best practices, ensuring a more secure, manageable, and compliant Active Directory environment.
    - **Steps**:
+     - I accessed Administrative Tools and opened Active Directory Users and Computers.
+     - I created a new Organizational Unit named "_ADMINS" in the domain mydomain.com .
+     - Inside "_ADMINS", I created a new user with the username a-fjedidi.
+       ![Screenshot](https://i.imgur.com/fdwc0tY.png)
+     - I added this user to the Domain Admins group by navigating to the Member Of tab in the user properties.
+      ![Screenshot](https://i.imgur.com/HKs437q.png)
+     - I logged out and then logged back in using the new domain admin account (a-fjedidi).
   
    
 5. **Configure DHCP**
