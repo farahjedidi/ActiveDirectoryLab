@@ -29,7 +29,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
    - **Purpose**: Setting a static IP for the internal NIC ensures that the domain controller has a fixed address within the internal network, which is necessary for reliable communication and services.
    - **Steps**: 
      - I accessed the network settings and configured NIC 2 (Internal) to use the static IP: 172.16.0.1 & subnet mask 255.255.255.0
-      ![Screenshot](https://i.imgur.com/imILsSe.png)
+     - ![Screenshot](https://i.imgur.com/imILsSe.png)
      - I did not set a default gateway for the internal NIC as the domain controller serves as its own gateway.
      - For DNS, I configured it to use the loopback address (127.0.0.1), which refers to the server itself.
 
@@ -37,23 +37,23 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
    - **Purpose**: AD DS is a server role in Windows Server that allows you to create a scalable, secure, and manageable infrastructure for user and resource management.
    - **Steps**: 
      - I opened Server Manager, added roles and features & selected the server.
-       ![Screenshot](https://i.imgur.com/ZZlr6y5.png)
-       ![Screenshot](https://i.imgur.com/jGgs1Fz.png)
+     -  ![Screenshot](https://i.imgur.com/ZZlr6y5.png)
+     -   ![Screenshot](https://i.imgur.com/jGgs1Fz.png)
        
      - Selected Active Directory Domain Services.
-       ![Screenshot](https://i.imgur.com/RxdwfJL.png)
+     -   ![Screenshot](https://i.imgur.com/RxdwfJL.png)
        
      - Proceeded with the installation and initial configuration.
-      ![Screenshot](https://i.imgur.com/bG3rKs5.png)
+     -   ![Screenshot](https://i.imgur.com/bG3rKs5.png)
 
 3. **Promote Server to Domain Controller**
    - **Purpose**: Promoting the server to a domain controller is essential to manage and provide authentication services in the domain.
    - **Steps**: 
      - After installing AD DS, I promoted the server to a domain controller.
-       ![Screenshot](https://i.imgur.com/yPQz7Az.png)
+     -   ![Screenshot](https://i.imgur.com/yPQz7Az.png)
        
      - Created a new forest with the Fully Qualified Domain Name (FQDN): `mydomain.com`.
-        ![Screenshot](https://i.imgur.com/QxNpX51.png)
+     -   ![Screenshot](https://i.imgur.com/QxNpX51.png)
        
      - Completed the wizard and restarted the server to apply changes.
        
@@ -63,9 +63,9 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - I accessed Administrative Tools and opened Active Directory Users and Computers.
      - I created a new Organizational Unit named "_ADMINS" in the domain mydomain.com .
      - Inside "_ADMINS", I created a new user with the username a-fjedidi.
-       ![Screenshot](https://i.imgur.com/fdwc0tY.png)
+     -  ![Screenshot](https://i.imgur.com/fdwc0tY.png)
      - I added this user to the Domain Admins group by navigating to the Member Of tab in the user properties.
-      ![Screenshot](https://i.imgur.com/HKs437q.png)
+     -   ![Screenshot](https://i.imgur.com/HKs437q.png)
      - I logged out and then logged back in using the new domain admin account (a-fjedidi).
   
    
