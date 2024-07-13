@@ -11,9 +11,10 @@ In this project, I set up a fully functional Active Directory environment using 
 Steps to Set Up the Lab
 
 ## Lab Environment Architecture
+![Architecture Diagram](https://i.imgur.com/dUrbQrj.png)
 
 ## Step 1: Set Up the Domain Controller
-![Architecture Diagram](https://i.imgur.com/dUrbQrj.png)
+
 
 ## Step 2: Configure Active Directory Domain Services
 This is a critical step in setting up the Active Directory environment. Active Directory Domain Services (AD DS) is the core component of Active Directory, providing the methods for storing directory data and making this data available to network users and administrators.
