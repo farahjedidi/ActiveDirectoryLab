@@ -9,6 +9,9 @@ In this project, I set up a fully functional Active Directory environment using 
 - Setting up the client machine
 - Joining the client machine to the Active Directory domain
 Steps to Set Up the Lab
+
+## Lab Environment Architecture
+
 ## Step 1: Set Up the Domain Controller
 
 ## Step 2: Configure Active Directory Domain Services
