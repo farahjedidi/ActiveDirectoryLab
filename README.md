@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/caf0dd58-83ab-4c76-8ddb-c0ea73f939d0)# Active Directory Lab
+# Active Directory Lab
 
 
 ![Lab Architecture](https://i.imgur.com/dUrbQrj.png)
