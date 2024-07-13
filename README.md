@@ -1,12 +1,13 @@
 # Active Directory Lab
 
-This repository contains the scripts and documentation for setting up an Active Directory Lab as illustrated in the provided architecture diagram.
+
 ![Lab Architecture](https://i.imgur.com/dUrbQrj.png)
-
-
 ## Introduction
 
 In this project, I set up an Active Directory lab environment using VirtualBox. The lab consists of a domain controller (Server 2019) and a client machine (Windows 10). The main goal is to configure and manage an AD DS environment.
+
+
+
 
 ## Setup Steps
 
