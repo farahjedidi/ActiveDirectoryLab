@@ -18,7 +18,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
 
 - **Domain Controller (Server 2019)**
   - NIC 1: Internet (DHCP, gets address automatically from home router)
-  - NIC 2: Internal Network (Static IP: 172.16.0.1, Mask: 255.255.255.0, DNS: 127.0.0.1)
+  - NIC 2: Internal Network (Static IP: 172.16.0.1, Mask: 255.255.255.0, DNS: 127.0.0.1, manual setup)
 
 - **Client Machine (Windows 10)**
   - NIC: Internal Network (DHCP, gets address from DC)
@@ -29,7 +29,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
    - **Purpose**: Setting a static IP for the internal NIC ensures that the domain controller has a fixed address within the internal network, which is necessary for reliable communication and services.
    - **Steps**: 
      - Access the network settings and configure NIC 2 (Internal) to use the static IP: 172.16.0.1.
-     - ![Screenshot]()
+     - ![Screenshot](https://i.imgur.com/imILsSe.png)
 
 2. **Install Active Directory Domain Services (AD DS) Role**
    - **Purpose**: AD DS is a server role in Windows Server that allows you to create a scalable, secure, and manageable infrastructure for user and resource management.
