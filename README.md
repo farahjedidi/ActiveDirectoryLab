@@ -94,6 +94,18 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - DHCP successfully configured.
      - ![Screenshot](https://i.imgur.com/fvD7Wup.png)
 
+### Creating Users with PowerShell
+
+1. **Create Organizational Units and Users**
+   - **Purpose**: Automating the creation of Organizational Units (OUs) and users with PowerShell saves time and ensures consistency in large environments.
+   - **Steps**: 
+     - Use the following PowerShell script to create an OU and multiple users:
+     ```powershell
+     
+     ```
+     - This script creates an Organizational Unit named "LabUsers" and 1000 user accounts within that OU.
+     - ![Screenshot]()
+
 ### Client Machine Setup
 
 1. **Configure NIC Settings**
@@ -111,17 +123,7 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
      - Restart the client machine to apply changes.
      - ![Screenshot]()
 
-### Creating Users with PowerShell
 
-1. **Create Organizational Units and Users**
-   - **Purpose**: Automating the creation of Organizational Units (OUs) and users with PowerShell saves time and ensures consistency in large environments.
-   - **Steps**: 
-     - Use the following PowerShell script to create an OU and multiple users:
-     ```powershell
-     
-     ```
-     - This script creates an Organizational Unit named "LabUsers" and 1000 user accounts within that OU.
-     - ![Screenshot]()
 
 ## Conclusion
 
