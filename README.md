@@ -1,8 +1,8 @@
 # Active Directory Lab
 
 This repository contains the scripts and documentation for setting up an Active Directory Lab as illustrated in the provided architecture diagram.
+![Lab Architecture](https://i.imgur.com/dUrbQrj.png)
 
-![Lab Architecture](Architecture/ARCHITECTURE.png)
 
 ## Introduction
 
@@ -28,46 +28,59 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
 ### Domain Controller Setup
 
 1. **Configure NIC Settings**
-   - Set NIC 2 (Internal) to a static IP: 172.16.0.1
-   - ![Screenshot](path/to/screenshot1.png)
+   - **Purpose**: Setting a static IP for the internal NIC ensures that the domain controller has a fixed address within the internal network, which is necessary for reliable communication and services.
+   - **Steps**: 
+     - Access the network settings and configure NIC 2 (Internal) to use the static IP: 172.16.0.1.
+     - ![Screenshot](path/to/screenshot1.png)
 
 2. **Install Active Directory Domain Services (AD DS) Role**
-   - Open Server Manager, add roles and features.
-   - Select Active Directory Domain Services.
-   - Install and configure.
-   - ![Screenshot](path/to/screenshot2.png)
+   - **Purpose**: AD DS is a server role in Windows Server that allows you to create a scalable, secure, and manageable infrastructure for user and resource management.
+   - **Steps**: 
+     - Open Server Manager, add roles and features.
+     - Select Active Directory Domain Services.
+     - Proceed with the installation and initial configuration.
+     - ![Screenshot](path/to/screenshot2.png)
 
 3. **Promote Server to Domain Controller**
-   - After installing AD DS, promote the server to a domain controller.
-   - Add a new forest with the FQDN: `mydomain.com`.
-   - Configure DNS and additional options.
-   - Complete the wizard and restart.
-   - ![Screenshot](path/to/screenshot3.png)
+   - **Purpose**: Promoting the server to a domain controller is essential to manage and provide authentication services in the domain.
+   - **Steps**: 
+     - After installing AD DS, follow the steps to promote the server to a domain controller.
+     - Create a new forest with the Fully Qualified Domain Name (FQDN): `mydomain.com`.
+     - Configure necessary DNS settings and additional options as per the wizard.
+     - Complete the wizard and restart the server to apply changes.
+     - ![Screenshot](path/to/screenshot3.png)
 
 4. **Configure DHCP**
-   - Add the DHCP role via Server Manager.
-   - Configure a DHCP scope for the internal network (172.16.0.100-200).
-   - Set gateway to 172.16.0.1 and DNS to 172.16.0.1.
-   - ![Screenshot](path/to/screenshot4.png)
+   - **Purpose**: DHCP (Dynamic Host Configuration Protocol) allows the domain controller to assign IP addresses to devices within the internal network dynamically.
+   - **Steps**: 
+     - Add the DHCP role via Server Manager.
+     - Configure a DHCP scope for the internal network (IP range: 172.16.0.100-200).
+     - Set the gateway to 172.16.0.1 and DNS to 172.16.0.1 to ensure proper network configuration for clients.
+     - ![Screenshot](path/to/screenshot4.png)
 
 ### Client Machine Setup
 
 1. **Configure NIC Settings**
-   - Set the NIC to use the internal network.
-   - Obtain IP automatically from the DHCP server (DC).
-   - ![Screenshot](path/to/screenshot5.png)
+   - **Purpose**: Configuring the NIC to use the internal network ensures that the client can communicate with the domain controller and receive an IP address via DHCP.
+   - **Steps**: 
+     - Set the NIC to use the internal network.
+     - Ensure it is set to obtain an IP address automatically from the DHCP server (DC).
+     - ![Screenshot](path/to/screenshot5.png)
 
 2. **Join Client to Domain**
-   - Open System Properties, change settings to join the domain `mydomain.com`.
-   - Provide domain admin credentials.
-   - Restart the machine.
-   - ![Screenshot](path/to/screenshot6.png)
+   - **Purpose**: Joining the client machine to the domain allows it to be managed centrally by the domain controller and to utilize domain resources.
+   - **Steps**: 
+     - Open System Properties, change settings to join the domain `mydomain.com`.
+     - Provide domain admin credentials when prompted.
+     - Restart the client machine to apply changes.
+     - ![Screenshot](path/to/screenshot6.png)
 
 ### Creating Users with PowerShell
 
 1. **Create Organizational Units and Users**
-   - Use PowerShell scripts to automate the creation of OUs and users.
-   - Example script:
+   - **Purpose**: Automating the creation of Organizational Units (OUs) and users with PowerShell saves time and ensures consistency in large environments.
+   - **Steps**: 
+     - Use the following PowerShell script to create an OU and multiple users:
      ```powershell
      # Create an OU
      New-ADOrganizationalUnit -Name "LabUsers" -Path "DC=mydomain,DC=com"
@@ -79,41 +92,11 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
        New-ADUser -Name $Username -AccountPassword $Password -PasswordNeverExpires $true -Enabled $true -Path "OU=LabUsers,DC=mydomain,DC=com"
      }
      ```
-   - ![Screenshot](path/to/screenshot7.png)
+     - This script creates an Organizational Unit named "LabUsers" and 1000 user accounts within that OU.
+     - ![Screenshot](path/to/screenshot7.png)
 
 ## Conclusion
 
-In this project, an Active Directory lab was set up using VirtualBox with a domain controller and a client machine. The lab demonstrates configuring AD DS, setting up DHCP, and automating user creation with PowerShell.
-
-Feel free to explore and modify the setup to fit your learning objectives. Contributions and suggestions are welcome!
-
-# Setting Up an Active Directory Home Lab
-
-## Introduction
-In this project, I set up a fully functional Active Directory environment using Oracle VirtualBox. By the end of this lab, I will have a domain controller and a client machine in a virtualized environment, which will help me understand Active Directory and Windows networking. The lab will include the following steps:
-
-- Setting up the domain controller
-- Configuring Active Directory Domain Services
-- Creating user accounts using PowerShell
-- Setting up the client machine
-- Joining the client machine to the Active Directory domain
-Steps to Set Up the Lab
-
-## Lab Environment Architecture
-![Architecture Diagram](https://i.imgur.com/dUrbQrj.png)
-
-## Step 1: Set Up the Domain Controller
+This lab demonstrates configuring AD DS, setting up DHCP, and automating user creation with PowerShell.
 
 
-## Step 2: Configure Active Directory Domain Services
-This is a critical step in setting up the Active Directory environment. Active Directory Domain Services (AD DS) is the core component of Active Directory, providing the methods for storing directory data and making this data available to network users and administrators.
-
-## Step 3: Create User Accounts
-
-## Step 4: Set Up the Client Machine
-
-## Step 5: Join the Client to the Domain
-Joining the client machine to the Active Directory domain is essential for centralized management and authentication.
-
-## Conclusion
-In this project, I set up a basic Active Directory lab environment with a domain controller and a client machine using Oracle VirtualBox. This setup can be used to practice and understand various Active Directory and networking concepts.
