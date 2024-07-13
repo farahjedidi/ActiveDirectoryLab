@@ -99,12 +99,8 @@ In this project, I set up an Active Directory lab environment using VirtualBox. 
 1. **Create Organizational Units and Users**
    - **Purpose**: Automating the creation of Organizational Units (OUs) and users with PowerShell saves time and ensures consistency in large environments.
    - **Steps**: 
-     - Use the following PowerShell script to create an OU and multiple users:
-     ```powershell
-     
-     ```
-     - This script creates an Organizational Unit named "LabUsers" and 1000 user accounts within that OU.
-     - ![Screenshot]()
+     - I used a PowerShell script to create an OU named "_USERS" and 1000 user accounts within that OU.
+     - ![Screenshot](https://i.imgur.com/4sxT4X1.png)
 
 ### Client Machine Setup
 
